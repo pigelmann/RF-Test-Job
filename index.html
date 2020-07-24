@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="js/showBar.js"></script>
+	<script type="text/javascript" src="js/stickyHeader.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<title>RF Test Job by Fisher</title>
+</head>
+<body>
+	<header>
+		<div class="header-elements">
+			<img class="logo" src="img/logo.svg" alt="">
+			<img class="logo-small" src="img/logo_small.svg" alt="">
+			<nav class="main-menu">
+
+				<div class="main-menu__button-wrapper" onclick="showBar('search')" onmouseover="showMark('search')" onmouseout="hideMark('search')">
+					<button class="main-menu__search" >
+						<span class="button-text">Поиск</span>
+					</button>
+					<div class="search-mark"></div>
+				</div>
+
+				<div class="main-menu__button-wrapper">
+					<button class="main-menu__favorite" onclick="showBar('favorite')" onmouseover="showMark('favorite')" onmouseout="hideMark('favorite')">
+						<span class="button-text">Избранное</span>
+					</button>
+					<div class="favorite-mark"></div>
+				</div>
+				
+				<div class="main-menu__button-wrapper">
+					<button class="main-menu__history" onclick="showBar('history')" onmouseover="showMark('history')" onmouseout="hideMark('history')">
+						<span class="button-text">История поиска</span>
+					</button>
+					<div class="history-mark"></div>
+				</div>
+			</nav>
+		</div>
+
+		<!-- Панель поиска с примерами запросов -->
+		<div class="search-bar">
+			<input type="text" class="big-input" name="" placeholder="Поиск" onfocus="placeholder=''">
+			
+			<div class="divider"></div>
+			
+			<div class="search-examples">
+				<a href="">Wallpapers</a>
+				<a href="">Textures & Patterns</a>
+				<a href="">Nature</a>
+				<a href="">Current Events</a>
+				<a href="">Architecture</a>
+				<a href="">Business & Work</a>
+				<a href="">Film</a>
+				<a href="">Animals</a>
+				<a href="">Travel</a>
+				<a href="">Fashion</a>
+				<a href="">Food & Drink</a>
+				<a href="">Spirituality</a>
+				<a href="">Experimental</a>
+				<a href="">People</a>
+				<a href="">Health</a>
+				<a href="">Arts & Culture</a>
+			</div>
+		</div>
+
+
+		<!-- Панель истории запросов -->
+		<div class="history-bar">
+			<h1>Ваши запросы</h1>
+			
+			<div class="search-examples">
+				<a href="">Wallpapers</a>
+				<a href="">Textures & Patterns</a>
+				<a href="">Nature</a>
+				<a href="">Current Events</a>
+				<a href="">Architecture</a>
+				<a href="">Business & Work</a>
+				<a href="">Film</a>
+				<a href="">Animals</a>
+				<a href="">Travel</a>
+				<a href="">Fashion</a>
+				<a href="">Food & Drink</a>
+				<a href="">Spirituality</a>
+				<a href="">Experimental</a>
+				<a href="">People</a>
+				<a href="">Health</a>
+				<a href="">Arts & Culture</a>
+			</div>
+		</div>
+
+	</header>
+
+	<main>
+
+		<div class="favorite-bar">
+			<h1>Избранное</h1>
+			
+			<nav class="layout-buttons">
+				<!-- Иконка сделать контент рядами (друг под другом) -->
+				<button class="layout-button__rows" onclick="changeLayout('rows')">
+					<svg class="layout-icon__rows" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect width="23" height="10" fill="black"/>
+						<rect y="13" width="23" height="10" fill="black"/>
+					</svg>
+				</button>
+
+				<button class="layout-button__grid" onclick="changeLayout('grid')">
+					<!-- Иконка сделать контент колонками -->
+					<svg class="layout-icon__grid" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect width="10" height="10" fill="black"/>
+						<rect y="13" width="10" height="10" fill="black"/>
+						<rect x="13" width="10" height="10" fill="black"/>
+						<rect x="13" y="13" width="10" height="10" fill="black"/>
+					</svg>
+				</button>
+			</nav>
+		</div>
+
+		<!-- Плитки фотографий-->
+		<div class="photos-list" id='photos-list'>
+			<div class="photos-list__col">
+				<img class="photos-list__item" src="img/img01.jpg" alt="">
+				<img class="photos-list__item" src="img/img02.jpg" alt="">
+				<img class="photos-list__item" src="img/img03.jpg" alt="">
+				<img class="photos-list__item" src="img/img04.jpg" alt="">
+			</div>
+			<div class="photos-list__col">
+				<img class="photos-list__item" src="img/img05.jpg" alt="">
+				<img class="photos-list__item" src="img/img06.jpg" alt="">
+				<img class="photos-list__item" src="img/img07.jpg" alt="">
+				<img class="photos-list__item" src="img/img08.jpg" alt="">
+			</div>
+			<div class="photos-list__col">
+				<img class="photos-list__item" src="img/img09.jpg" alt="">
+				<img class="photos-list__item" src="img/img10.jpg" alt="">
+				<img class="photos-list__item" src="img/img11.jpg" alt="">
+				<img class="photos-list__item" src="img/img12.jpg" alt="">
+			</div>
+		</div>
+	</main>
+</body>
+</html>

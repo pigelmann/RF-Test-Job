@@ -1,0 +1,361 @@
+@font-face {
+   font-family: "SF UI Display";
+   src: url("../fonts/sf-ui-display-light-58646b33e0551.woff") format('woff');
+   font-style: normal;
+	font-weight: normal;
+}
+
+
+@font-face {
+   font-family: "SF UI Display";
+   src: url("../fonts/sf-ui-display-semibold-58646eddcae92.woff") format('woff');
+   font-style: normal;
+	font-weight: bold;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+header {
+	background-color: #000;
+	height: 80px;
+	position: fixed;
+  	top: 0;
+  	width: 100%
+}
+
+.header-elements {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1480px;
+	margin: 0 auto;
+}
+
+.logo-small {
+	display: none;
+}
+
+.main-menu {
+	display: flex;
+	justify-content: space-between;
+}
+
+.search-bar, .history-bar {
+	background-color: #000;
+	height: 151px;
+	padding: 78px 20px 91px;
+}
+
+.history-bar {
+	padding-top: 23px;
+}
+
+.favorite-bar {
+	/*height: 190px;*/
+	padding: 190px 30px 0;
+}
+
+.favorite-bar h1 {
+	font-family: SF UI Display;
+	font-style: bold;
+	font-size: 72px;
+	line-height: 86px;
+	text-align: center;
+	color: #000;
+}
+
+.layout-buttons {
+	margin: 0 auto;
+	width: 66px;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.layout-buttons button:focus {
+	opacity: 1;
+}
+
+
+.history-bar h1{
+	font-family: SF UI Display;
+	color: #fff;
+	font-size: 36px;
+	text-align: center;
+	line-height: 43px;
+	margin-bottom: 40px;
+}
+
+.history-bar .search-examples {
+	white-space: initial;
+	line-height: 40px;
+}
+
+/*Вид кнопки с дефольного на наш*/
+.main-menu button {
+	padding: 29px 0;
+	background-color: transparent;
+   border: none;
+   cursor: pointer;
+   overflow: hidden; 
+	margin: 0 0 0 23px;
+	white-space: nowrap;
+	text-decoration: none;
+	font-family: 'SF UI Display', sans-serif;
+	font-size: 18px;
+	color: #fff;
+}
+
+.layout-buttons button {
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+	outline: 0;
+	opacity: 0.4;
+}
+
+
+/*Добавляем иконки для кнопок*/
+.main-menu__search:before {
+	content: "";
+	display: block;
+	background: url("../img/icon/search_24px.svg") no-repeat;
+	height: 22px;
+	width: 22px;
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.main-menu__favorite:before {
+	content: "";
+	display: block;
+	background: url("../img/icon/favorite_24px.svg") no-repeat;
+	height: 22px;
+	width: 24px;
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.main-menu__history:before {
+	content: "";
+	display: block;
+	background: url("../img/icon/history_24px.svg") no-repeat;
+	height: 22px;
+	width: 22px;
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+/*Прячем панели и черточки под кнопками*/
+[class$="-mark"], [class$="-bar"] {
+	display: none;
+}
+
+[class$="-mark"] {
+	position: absolute;
+	top: 48px;
+	right: 0;
+	background-color: #fff;
+	height: 3px;
+	width: 30px;
+	margin: 10px 0 0 auto;
+}
+
+/*Убираем дефолтное подсвечиване выделенной кнопки*/
+.main-menu button:focus {
+   outline:0;
+}
+
+/*Черточки относительно враппера кнопки*/
+.main-menu__button-wrapper {
+	position: relative;
+}
+
+/*Показываем черточки под кнопкой при наведении*/
+.main-menu__search:hover + .search-mark, .main-menu__favorite:hover + .favorite-mark, .main-menu__history:hover + .history-mark {
+	display: block;
+}
+
+.photos-list {
+	display: flex;
+	max-width: 1480px;
+	justify-content: space-between;
+	margin: 158px auto;
+}
+
+.photos-list__col {
+	width: 476px;
+}
+
+.photos-list__item {
+	display: block;
+	max-width:100%;
+	height: auto;
+	margin: 0 0 26px;
+	border-radius: 8px;
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/*Вид инпутбара с дефолтного на наш*/
+.big-input {
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	color: #fff;
+	background-color: transparent;
+	border: none;
+	font-size: 72px;
+	line-height: 86px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/*Убираем дефолтное подсвечивание инпутбара*/
+.big-input:focus {
+   outline:0;
+}
+
+/*Делаем белым текст плейсхолтера в инпутбаре*/
+::placeholder {
+	color: #fff;
+	opacity: 1;
+}
+
+.divider {
+	display: block;
+	height: 1px;
+	width: 70%;
+	background: linear-gradient(to right, transparent 0%, white 50%, transparent 100%); 
+	margin: 20px auto 30px;
+}
+
+.search-examples {
+	width: 90%;
+	margin: 0 auto;
+	display: block;
+	white-space: nowrap;
+	overflow: hidden; 
+	text-align: center;
+}
+
+/*Уход в темень для строки запросов - сверху полупрозрачный градиент*/
+.search-bar .search-examples:after {
+	content:"";
+	position: relative;
+  	left: 10px;
+  	top: -18px;
+  	z-index: 999;
+	display: block;
+	height: 20px;
+	background: linear-gradient(to right, transparent 66%, #000 100%);
+}
+
+/*Меняем дефолтный вид ссылок строки запросов*/
+.search-examples a{
+	font-family: "SF UI Display", sans-serif;
+	font-style: 18px;
+	color: #fff;
+	text-decoration: none;
+	white-space: nowrap;
+	margin: 0 20px 0 0;
+}
+
+
+@media screen and (max-width: 1540px) {
+
+	.header-elements {
+		padding: 0 30px;
+	}
+
+	.photos-list {
+		padding: 0 30px;
+	}
+
+	.photos-list__col {
+		width: 32%;
+	}
+	
+	.photos-list__item {
+		margin: 0 0 2vw;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+
+	.logo {
+		display: none;
+	}
+
+	.logo-small {
+		display: block;
+	}
+
+	.photos-list {
+		padding: 0 22px;
+		display: block;
+	}
+	
+	.photos-list__col {
+		width: 100%;
+	}
+
+	.photos-list__item {
+		width: 100%;
+		margin: 0 0 2vw;
+	}
+
+	.search-bar, .history-bar {
+		height: 100vh;
+	}
+
+	.search-examples {
+		white-space: initial;
+		overflow: initial; 
+		line-height: 40px;
+	}
+
+	.search-examples:after {
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 600px) {
+
+	/*Скрываем черточки под иконками кнопок на мобиле при наведении*/
+	.main-menu__search:hover + .search-mark, .main-menu__favorite:hover + .favorite-mark, .main-menu__history:hover + .history-mark {
+		display: none;
+	}
+
+	/*Чуть смещаем черточку под иконкой чтобы встала по центру*/
+	[class$="-mark"] {
+		right: 6px;
+	}
+
+	.favorite-bar h1 {
+		font-size: 36px;
+	}
+
+	.favorite-bar {
+		padding: 70px 30px 0;
+	}
+
+	.big-input {
+		font-size: 36px;
+	}
+
+	.divider {
+		width: 85%;
+		margin: 0 auto 30px;
+	}
+
+	.button-text {
+		display: none;
+	}
+}
